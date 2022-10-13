@@ -4,23 +4,31 @@ import { ReactNode } from "react";
 
 export interface TextProps {
   size?: "sm" | "md" | "lg";
-  underline?: boolean;
+  link?: boolean;
+  linkHover?: string;
   children: ReactNode;
   asChild?: boolean;
+  className?: string;
 }
 
-export function Text({ size = "md", children, asChild, underline = false }: TextProps) {
+export function Text({ size = "md", children, asChild, link = false, className, linkHover }: TextProps) {
 
     const Comp = asChild ? Slot : 'span';
 
 
   return (
     <Comp
-      className={clsx("text-gray-100 font-sans", {
-        "text-xs": size === "sm",
-        "text-sm": size === "md",
-        "text-md": size === "lg",
-      }, underline?"underline":"")}
+      className={clsx(
+        "text-gray-100 font-sans", 
+        {
+          "text-xs": size === "sm",
+          "text-sm": size === "md",
+          "text-md": size === "lg",
+        }, 
+        link?"underline":"", 
+        linkHover?linkHover:"", 
+        className
+      )}
     >
       {children}
     </Comp>

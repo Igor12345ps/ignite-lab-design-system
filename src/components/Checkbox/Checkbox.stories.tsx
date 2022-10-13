@@ -4,9 +4,7 @@ import { Checkbox, CheckboxProps } from './Checkbox';
 export default {
     title: 'Components/Checkbox',
     component: Checkbox,
-    args: {
-        text: "Lembrar-me de mim"
-    },
+    args: {},
     argTypes: {},
 } as Meta<CheckboxProps>
 

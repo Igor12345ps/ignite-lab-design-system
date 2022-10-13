@@ -6,3 +6,8 @@
 	margin: 0;
 	padding: 0;
 }
+
+*::selection {
+	background: #81D8F7;
+	color: #202024;
+}
